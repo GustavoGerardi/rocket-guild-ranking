@@ -127,7 +127,9 @@ function App() {
   const [guildData, setGuildData] = useState(null);
   const [fileName, setFileName] = useState('');
   const [error, setError] = useState('');
-  const [storageMessage, setStorageMessage] = useState('');
+  const [storageMessage, setStorageMessage] = useState(
+    supabase ? 'Conectando ao Supabase...' : 'Supabase não configurado; o último JSON não será compartilhado entre visitas.',
+  );
   const [showRules, setShowRules] = useState(true);
   const [importUnlocked, setImportUnlocked] = useState(false);
   const inputRef = useRef(null);
@@ -170,7 +172,10 @@ function App() {
         setError(`Não foi possível carregar o último JSON do Supabase: ${loadError.message}`);
         return;
       }
-      if (!data) return;
+      if (!data) {
+        setStorageMessage('Supabase conectado; nenhum JSON foi importado ainda.');
+        return;
+      }
 
       const validationError = validateGuildJson(data.data);
       if (validationError) {

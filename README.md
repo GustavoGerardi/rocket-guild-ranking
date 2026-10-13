@@ -92,7 +92,8 @@ A aplicação ignora campos extras. Os três campos obrigatórios de cada membro
 1. Crie um projeto no Supabase.
 2. Execute [`supabase/schema.sql`](supabase/schema.sql) no SQL Editor do projeto.
 3. Copie `.env.example` para `.env.local` e preencha a URL do projeto e a chave publishable/anon.
-4. Configure as mesmas variáveis no ambiente de deploy e reinicie o Vite após alterar `.env.local`.
+4. Na Vercel, abra **Project Settings → Environment Variables** e cadastre `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` para Production (e Preview, se necessário).
+5. Faça um novo deploy após salvar as variáveis. Variáveis `VITE_*` são incorporadas durante o build.
 
 O app usa a tabela `guild_imports` com o registro fixo `latest`. O JSON importado fica disponível para leitura pública porque alimenta o ranking público. A sequência de teclado apenas oculta o botão na interface: como o site e a chave publishable são públicos, ela não é autenticação nem impede alguém de chamar a API diretamente. Para restringir gravações de verdade, proteja as gravações com Supabase Auth e políticas RLS para usuários autorizados, ou com um backend/Edge Function.
 

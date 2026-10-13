@@ -1,0 +1,19 @@
+LEITOR LOCAL ROCKET
+
+1. Instale Node.js 22.13+ (linha 22) ou Node.js 24+ neste computador, se necessário.
+2. Extraia o ZIP inteiro em uma pasta. Não execute somente o CMD dentro do ZIP.
+3. Abra start-local-exports.cmd e mantenha a janela aberta.
+4. Acesse https://rocket-guild-ranking.vercel.app e desbloqueie o botão de importação como antes.
+5. Clique em Importar JSON mais recente. Se o navegador pedir, permita o acesso à rede local.
+
+O leitor usa APPDATA do usuário Windows atual, sem nome de usuário fixo:
+%APPDATA%\PokeAlliance\PokeAllianceV3\exports
+
+A cada clique, o site envia Date.now(). O leitor consulta novamente a pasta e devolve o JSON com a data de última modificação mais recente até esse instante. Ele não modifica nem exclui seus arquivos e não acessa o Supabase. O site mantém a validação e a persistência existentes.
+
+O leitor atende somente em 127.0.0.1:47631 e permite o domínio publicado acima e localhost nas portas 5173/4173. Fechar a janela encerra o leitor. Abra-o em cada computador que fará upload.
+
+Para outro domínio HTTPS, execute:
+start-local-exports.cmd --origin https://seu-site.example
+
+Sem o leitor ativo, use Escolher arquivo para importar manualmente.

@@ -1,0 +1,24 @@
+{
+  "guild": "Rocket",
+  "exportedAt": "2026-10-09 15:25:50",
+  "members": [
+    {
+      "rank": "the Leader",
+      "contribution": 12000,
+      "status": "online",
+      "lastLogin": "",
+      "level": 400,
+      "name": "Alpha Rocket",
+      "dailiesCompleted": 40
+    },
+    {
+      "rank": "a Member",
+      "contribution": 9000,
+      "status": "online",
+      "lastLogin": "",
+      "level": 380,
+      "name": "Silver Moon",
+      "dailiesCompleted": 33
+    }
+  ]
+}
